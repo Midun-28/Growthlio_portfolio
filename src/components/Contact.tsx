@@ -64,7 +64,7 @@ const Contact = () => {
             <Button
               size="lg"
               className="bg-white text-secondary hover:bg-white/90 font-semibold px-8 py-6 text-lg group"
-              onClick={() => window.open("https://wa.me/919600818538?text=Hi!%20I%20want%20to%20work%20with%20Growthlio", "_blank")}
+              onClick={() => window.open("https://wa.me/918883111773?text=Hi!%20I%20want%20to%20work%20with%20Growthlio", "_blank")}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
               Chat on WhatsApp
@@ -75,7 +75,7 @@ const Contact = () => {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-6 text-lg bg-transparent group"
-              onClick={() => window.open("https://www.instagram.com/ngp_explorer/", "_blank")}
+              onClick={() => window.open("https://www.instagram.com/growth_lio/", "_blank")}
             >
               <Instagram className="mr-2 h-5 w-5" />
               Follow on Instagram

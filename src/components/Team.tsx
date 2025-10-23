@@ -7,7 +7,7 @@ import teamMember2 from "@/assets/team-member-2.jpg";
 // Dynamic team data - easily add or remove team members here
 const teamMembers = [
   {
-    name: "Naveen Prabu",
+    name: "Suriya Prakash",
     role: "Founder & Digital Marketing Strategist",
     tagline: "Creative Thinker | Growth Hacker | Storyteller",
     image: teamMember1,

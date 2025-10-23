@@ -1,4 +1,4 @@
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle, Mail } from "lucide-react";
 import logo from "@/assets/growthlio-logo.jpg";
 
 const Footer = () => {
@@ -18,9 +18,9 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img 
-                src={logo} 
-                alt="Growthlio Branding" 
+              <img
+                src={logo}
+                alt="Growthlio Branding"
                 className="w-12 h-12 object-contain"
               />
               <span className="text-xl font-bold">Growthlio Branding</span>
@@ -72,9 +72,9 @@ const Footer = () => {
           {/* Social Column */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-4">
               <a
-                href="https://www.instagram.com/ngp_explorer/"
+                href="https://www.instagram.com/growth_lio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110"
@@ -83,13 +83,24 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://wa.me/919600818538?text=Hi!%20I%20want%20to%20know%20more%20about%20Growthlio%20Branding"
+                href="https://wa.me/918883111773?text=Hi!%20I%20want%20to%20know%20more%20about%20Growthlio%20Branding"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
+              </a>
+            </div>
+
+            {/* Email Contact */}
+            <div className="flex items-center gap-2 text-white/80 hover:text-white transition-all duration-300 group">
+              <Mail className="h-5 w-5 text-white/70 group-hover:text-white transition-all duration-300" />
+              <a
+                href="mailto:contact@growthlio.in"
+                className="text-sm underline-offset-4 group-hover:underline transition-all duration-300"
+              >
+                contact@growthlio.in
               </a>
             </div>
           </div>
