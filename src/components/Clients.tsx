@@ -1,14 +1,19 @@
 import { useEffect, useRef, useState } from "react";
+import clientLogo1 from "@/assets/client-logo-1.jpg";
+import clientLogo2 from "@/assets/client-logo-2.jpg";
+import clientLogo3 from "@/assets/client-logo-3.jpg";
+import clientLogo4 from "@/assets/client-logo-4.jpg";
+import clientLogo5 from "@/assets/client-logo-5.jpg";
+import clientLogo6 from "@/assets/client-logo-6.jpg";
 
+// Dynamic client data - easily add or remove clients here
 const clients = [
-  { name: "TechCorp", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=TC" },
-  { name: "InnovateLab", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=IL" },
-  { name: "GrowthHub", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=GH" },
-  { name: "BrandFlow", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=BF" },
-  { name: "DigitalEdge", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=DE" },
-  { name: "CreativeMinds", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=CM" },
-  { name: "VisionaryX", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=VX" },
-  { name: "NextGen", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=NG" },
+  { name: "TechCorp", logo: clientLogo1 },
+  { name: "InnovateLab", logo: clientLogo2 },
+  { name: "GrowthHub", logo: clientLogo3 },
+  { name: "BrandFlow", logo: clientLogo4 },
+  { name: "DigitalEdge", logo: clientLogo5 },
+  { name: "CreativeMinds", logo: clientLogo6 },
 ];
 
 const Clients = () => {
@@ -54,9 +59,9 @@ const Clients = () => {
           <div className="overflow-hidden">
             <div className={`flex gap-8 animate-scroll ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
               {/* First set of logos */}
-              {clients.map((client) => (
+              {clients.map((client, index) => (
                 <div
-                  key={`${client.name}-1`}
+                  key={`${client.name}-1-${index}`}
                   className="flex-shrink-0 w-32 h-32 rounded-full bg-card shadow-lg flex items-center justify-center hover-scale transition-all duration-300"
                 >
                   <img
@@ -67,9 +72,9 @@ const Clients = () => {
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
-              {clients.map((client) => (
+              {clients.map((client, index) => (
                 <div
-                  key={`${client.name}-2`}
+                  key={`${client.name}-2-${index}`}
                   className="flex-shrink-0 w-32 h-32 rounded-full bg-card shadow-lg flex items-center justify-center hover-scale transition-all duration-300"
                 >
                   <img

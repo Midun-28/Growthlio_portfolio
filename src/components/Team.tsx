@@ -1,19 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Linkedin, Mail } from "lucide-react";
+import teamMember1 from "@/assets/team-member-1.jpg";
+import teamMember2 from "@/assets/team-member-2.jpg";
 
+// Dynamic team data - easily add or remove team members here
 const teamMembers = [
   {
     name: "Naveen Prabu",
     role: "Founder & Digital Marketing Strategist",
     tagline: "Creative Thinker | Growth Hacker | Storyteller",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    image: teamMember1,
   },
   {
     name: "Priya Sharma",
     role: "Creative Director & Brand Architect",
     tagline: "Visual Innovator | Brand Builder | Design Enthusiast",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    image: teamMember2,
   },
 ];
 
@@ -55,6 +58,7 @@ const Team = () => {
           </p>
         </div>
 
+        {/* Dynamic Grid - Automatically adjusts to any number of team members (1 to n) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <Card

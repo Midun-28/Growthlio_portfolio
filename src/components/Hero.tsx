@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Instagram, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-workspace.jpg";
+import heroImage from "@/assets/hero-workspace-marketing.jpg";
 
 const Hero = () => {
   return (
