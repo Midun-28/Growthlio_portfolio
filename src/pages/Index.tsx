@@ -7,11 +7,13 @@ import Clients from "@/components/Clients";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SocialSidebar from "@/components/SocialSidebar";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <SocialSidebar />
       <Hero />
       <About />
       <Services />

@@ -87,6 +87,10 @@ export default {
           "50%": { transform: "scale(1.15) translate(-2%, -2%)" },
           "100%": { transform: "scale(1.1) translate(0, 0)" }
         },
+        "scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -96,6 +100,7 @@ export default {
         "slide-in": "slide-in 0.6s ease-out",
         "zoom-in": "zoom-in 0.5s ease-out",
         "parallax-pan": "parallax-pan 20s ease-in-out infinite",
+        "scroll": "scroll 30s linear infinite",
       },
     },
   },

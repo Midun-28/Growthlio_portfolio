@@ -36,10 +36,11 @@ const About = () => {
           <div className="h-1 w-24 bg-gradient-primary mx-auto mb-8 rounded-full" />
           
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            Growthlio Branding is a forward-thinking creative agency driven by results and storytelling. 
-            We help brands grow through engaging visuals, digital strategy, and impactful campaigns. 
-            Our mission is to transform ideas into powerful brand experiences that resonate with audiences 
-            and drive measurable growth.
+            At Growthlio, we believe in the power of strategic growth and engaging content that connects with your audience. 
+            Our professional team specializes in crafting memorable campaigns that elevate your online presence through 
+            Social Media Marketing, Branding & Design, Website Creation, Video Editing, and Ads Management. 
+            We focus on what resonates with your customers, making your brand relatable and impactful. 
+            Let's collaborate to transform your ideas into vibrant realities and drive measurable growth!
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16">

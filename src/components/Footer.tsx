@@ -1,4 +1,5 @@
 import { Instagram, MessageCircle } from "lucide-react";
+import logo from "@/assets/growthlio-logo.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,9 +18,11 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">G</span>
-              </div>
+              <img 
+                src={logo} 
+                alt="Growthlio Branding" 
+                className="w-12 h-12 object-contain"
+              />
               <span className="text-xl font-bold">Growthlio Branding</span>
             </div>
             <p className="text-white/80 text-sm">

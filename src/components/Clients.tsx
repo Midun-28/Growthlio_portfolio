@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
 const clients = [
-  { name: "TechCorp", logo: "https://via.placeholder.com/150x80/0096A8/ffffff?text=TechCorp" },
-  { name: "InnovateLab", logo: "https://via.placeholder.com/150x80/002E5D/ffffff?text=InnovateLab" },
-  { name: "GrowthHub", logo: "https://via.placeholder.com/150x80/0096A8/ffffff?text=GrowthHub" },
-  { name: "BrandFlow", logo: "https://via.placeholder.com/150x80/002E5D/ffffff?text=BrandFlow" },
-  { name: "DigitalEdge", logo: "https://via.placeholder.com/150x80/0096A8/ffffff?text=DigitalEdge" },
-  { name: "CreativeMinds", logo: "https://via.placeholder.com/150x80/002E5D/ffffff?text=CreativeMinds" },
-  { name: "VisionaryX", logo: "https://via.placeholder.com/150x80/0096A8/ffffff?text=VisionaryX" },
-  { name: "NextGen", logo: "https://via.placeholder.com/150x80/002E5D/ffffff?text=NextGen" },
+  { name: "TechCorp", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=TC" },
+  { name: "InnovateLab", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=IL" },
+  { name: "GrowthHub", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=GH" },
+  { name: "BrandFlow", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=BF" },
+  { name: "DigitalEdge", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=DE" },
+  { name: "CreativeMinds", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=CM" },
+  { name: "VisionaryX", logo: "https://via.placeholder.com/120/0096A8/ffffff?text=VX" },
+  { name: "NextGen", logo: "https://via.placeholder.com/120/002E5D/ffffff?text=NG" },
 ];
 
 const Clients = () => {
@@ -36,12 +36,12 @@ const Clients = () => {
     <section
       id="clients"
       ref={sectionRef}
-      className="py-20 md:py-32 bg-muted"
+      className="py-20 md:py-32 bg-muted overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary mb-6">
-            Our Trusted Partners
+            Our Growth Partners
           </h2>
           <div className="h-1 w-24 bg-gradient-primary mx-auto mb-6 rounded-full" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -49,20 +49,38 @@ const Clients = () => {
           </p>
         </div>
 
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 items-center transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          {clients.map((client, index) => (
-            <div
-              key={client.name}
-              className="flex items-center justify-center p-6 bg-card rounded-xl hover:shadow-lg transition-all duration-300 hover-scale"
-              style={{ transitionDelay: `${index * 50}ms` }}
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="w-full h-auto max-w-[150px] opacity-70 hover:opacity-100 transition-opacity"
-              />
+        {/* Animated Carousel */}
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div className={`flex gap-8 animate-scroll ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+              {/* First set of logos */}
+              {clients.map((client) => (
+                <div
+                  key={`${client.name}-1`}
+                  className="flex-shrink-0 w-32 h-32 rounded-full bg-card shadow-lg flex items-center justify-center hover-scale transition-all duration-300"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="w-20 h-20 object-contain rounded-full"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {clients.map((client) => (
+                <div
+                  key={`${client.name}-2`}
+                  className="flex-shrink-0 w-32 h-32 rounded-full bg-card shadow-lg flex items-center justify-center hover-scale transition-all duration-300"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="w-20 h-20 object-contain rounded-full"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

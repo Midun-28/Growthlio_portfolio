@@ -5,28 +5,28 @@ import { Card, CardContent } from "@/components/ui/card";
 const services = [
   {
     icon: Share2,
-    title: "Social Media Marketing",
-    description: "Strategic campaigns that engage audiences and build brand loyalty across all platforms.",
-  },
-  {
-    icon: Target,
-    title: "Content Strategy & Branding",
-    description: "Crafting compelling narratives and visual identities that resonate with your target audience.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Performance Marketing",
-    description: "Data-driven campaigns optimized for conversions and measurable ROI.",
-  },
-  {
-    icon: Search,
-    title: "SEO Optimization",
-    description: "Boost your online visibility and rank higher with strategic SEO solutions.",
+    title: "Social Media Growth & Content Creation",
+    description: "Strategic campaigns on Instagram & Facebook that engage audiences and build brand loyalty with compelling content.",
   },
   {
     icon: Palette,
-    title: "Graphic Design & Video Editing",
-    description: "Stunning visuals and engaging videos that capture attention and tell your story.",
+    title: "Branding, Logo & Graphic Design",
+    description: "Complete visual identity, posters, flyers, and graphic design that make your brand unforgettable.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Website Growth & Management",
+    description: "Business websites and landing pages that convert visitors into customers and drive measurable growth.",
+  },
+  {
+    icon: Search,
+    title: "Video Editing & Reels Creation",
+    description: "Short-form content that captures attention, engages audiences, and tells your brand story effectively.",
+  },
+  {
+    icon: Target,
+    title: "Ads & Campaign Growth Management",
+    description: "Data-driven Facebook Ads and Google Ads campaigns optimized for conversions and maximum ROI.",
   },
 ];
 
@@ -60,11 +60,11 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary mb-6">
-            Our Services
+            Our Growth Services
           </h2>
           <div className="h-1 w-24 bg-gradient-primary mx-auto mb-6 rounded-full" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive digital solutions tailored to accelerate your brand's growth
+            Helping Brands Grow with Strategy & Innovation
           </p>
         </div>
 
