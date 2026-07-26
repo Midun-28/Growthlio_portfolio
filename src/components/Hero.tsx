@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Instagram, ArrowRight } from "lucide-react";
+import { MessageCircle, Eye, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-workspace-marketing.jpg";
 
 const Hero = () => {
@@ -56,10 +56,10 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-6 text-lg bg-transparent group"
-              onClick={() => window.open("https://www.instagram.com/ngp_explorer/", "_blank")}
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             >
-              <Instagram className="mr-2 h-5 w-5" />
-              Follow on Instagram
+              <Eye className="mr-2 h-5 w-5" />
+              Explore Our Work
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

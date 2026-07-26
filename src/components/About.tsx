@@ -36,25 +36,21 @@ const About = () => {
           <div className="h-1 w-24 bg-gradient-primary mx-auto mb-8 rounded-full" />
           
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            At Growthlio, we believe in the power of strategic growth and engaging content that connects with your audience. 
-            Our professional team specializes in crafting memorable campaigns that elevate your online presence through 
-            Social Media Marketing, Branding & Design, Website Creation, Video Editing, and Ads Management. 
-            We focus on what resonates with your customers, making your brand relatable and impactful. 
-            Let's collaborate to transform your ideas into vibrant realities and drive measurable growth!
+            At Growthlio Digital Service, we help businesses build a strong digital presence through strategic marketing, creative content, and result-driven campaigns. We work closely with brands, startups, restaurants, salons, hotels, and local businesses to create impactful digital experiences that attract customers and drive growth.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16">
             <div className="p-6 rounded-2xl bg-gradient-accent hover:shadow-lg transition-all">
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2">357+</div>
               <div className="text-muted-foreground">Projects Completed</div>
             </div>
             <div className="p-6 rounded-2xl bg-gradient-accent hover:shadow-lg transition-all">
-              <div className="text-4xl font-bold text-primary mb-2">200+</div>
+              <div className="text-4xl font-bold text-primary mb-2">12+</div>
               <div className="text-muted-foreground">Happy Clients</div>
             </div>
             <div className="p-6 rounded-2xl bg-gradient-accent hover:shadow-lg transition-all">
-              <div className="text-4xl font-bold text-primary mb-2">98%</div>
-              <div className="text-muted-foreground">Satisfaction Rate</div>
+              <div className="text-4xl font-bold text-primary mb-2">96%</div>
+              <div className="text-muted-foreground">Client Satisfaction Rate</div>
             </div>
           </div>
         </div>

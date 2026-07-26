@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/growthlio-logo.jpg";
+import logo from "@/assets/growthlio-ds-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,11 +43,11 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <img 
               src={logo} 
-              alt="Growthlio Branding" 
-              className="w-12 h-12 object-contain"
+              alt="Growthlio Digital Service" 
+              className="w-14 h-14 object-contain"
             />
             <span className="text-xl md:text-2xl font-bold text-secondary">
-              Growthlio Branding
+              Growthlio Digital Service
             </span>
           </div>
 

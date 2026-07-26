@@ -1,32 +1,95 @@
 import { useEffect, useRef, useState } from "react";
-import { Share2, Target, TrendingUp, Search, Palette } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Share2,
+  Video,
+  Globe,
+  Target,
+  Lightbulb,
+  Palette,
+  Users,
+  Camera,
+} from "lucide-react";
 
 const services = [
   {
     icon: Share2,
-    title: "Social Media Growth & Content Creation",
-    description: "Strategic campaigns on Instagram & Facebook that engage audiences and build brand loyalty with compelling content.",
+    title: "Social Media Management",
+    features: [
+      "Content planning",
+      "Content scheduling",
+      "Audience engagement",
+      "Monthly reporting",
+    ],
   },
   {
-    icon: Palette,
-    title: "Branding, Logo & Graphic Design",
-    description: "Complete visual identity, posters, flyers, and graphic design that make your brand unforgettable.",
+    icon: Video,
+    title: "Content Creation",
+    features: [
+      "Reels production",
+      "Social media content",
+      "Creative storytelling",
+      "Platform-specific content",
+    ],
   },
   {
-    icon: TrendingUp,
-    title: "Website Growth & Management",
-    description: "Business websites and landing pages that convert visitors into customers and drive measurable growth.",
-  },
-  {
-    icon: Search,
-    title: "Video Editing & Reels Creation",
-    description: "Short-form content that captures attention, engages audiences, and tells your brand story effectively.",
+    icon: Globe,
+    title: "Website Development",
+    features: [
+      "Business websites",
+      "Landing pages",
+      "Responsive design",
+      "Website maintenance",
+    ],
   },
   {
     icon: Target,
-    title: "Ads & Campaign Growth Management",
-    description: "Data-driven Facebook Ads and Google Ads campaigns optimized for conversions and maximum ROI.",
+    title: "Performance Marketing",
+    features: [
+      "Meta Ads",
+      "Google Ads",
+      "Lead generation campaigns",
+      "Conversion optimization",
+    ],
+  },
+  {
+    icon: Lightbulb,
+    title: "Brand Strategy & Identity",
+    features: [
+      "Brand positioning",
+      "Visual identity",
+      "Brand messaging",
+      "Personal branding",
+    ],
+  },
+  {
+    icon: Palette,
+    title: "Graphic Design",
+    features: [
+      "Social media creatives",
+      "Posters",
+      "Marketing materials",
+      "Brand assets",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Influencer Marketing",
+    features: [
+      "Influencer collaborations",
+      "Campaign planning",
+      "Content partnerships",
+      "Brand awareness campaigns",
+    ],
+  },
+  {
+    icon: Camera,
+    title: "Drone Photography & Videography",
+    features: [
+      "Drone shoots",
+      "Aerial videos",
+      "Event coverage",
+      "Promotional visuals",
+    ],
   },
 ];
 
@@ -64,31 +127,50 @@ const Services = () => {
           </h2>
           <div className="h-1 w-24 bg-gradient-primary mx-auto mb-6 rounded-full" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Helping Brands Grow with Strategy & Innovation
+            Everything your brand needs to grow, scale, and stand out digitally.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Card
+            <div
               key={service.title}
-              className={`hover-lift cursor-pointer border-none bg-card transition-all duration-500 ${
+              className={`group relative bg-card rounded-2xl p-7 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mb-6">
-                  <service.icon className="h-8 w-8 text-white" />
+              {/* Gradient glow on hover */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary mb-4">
+
+                {/* Title */}
+                <h3 className="text-lg font-semibold text-secondary mb-4 group-hover:text-primary transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
+
+                {/* Divider */}
+                <div className="h-px w-full bg-border/60 mb-4" />
+
+                {/* Feature list */}
+                <ul className="space-y-2.5">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                    >
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           ))}
         </div>
       </div>

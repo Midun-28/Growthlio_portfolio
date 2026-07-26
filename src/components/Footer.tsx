@@ -1,5 +1,5 @@
-import { Instagram, MessageCircle, Mail } from "lucide-react";
-import logo from "@/assets/growthlio-logo.jpg";
+import { Instagram, MessageCircle, Mail, Facebook, Linkedin, Phone } from "lucide-react";
+import logo from "@/assets/growthlio-ds-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,16 +17,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* Brand Column */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4 group cursor-pointer" onClick={() => scrollToSection("#hero")}>
               <img
                 src={logo}
-                alt="Growthlio Branding"
-                className="w-12 h-12 object-contain"
+                alt="Growthlio Digital Service"
+                className="w-20 h-20 object-contain group-hover:scale-105 transition-transform duration-300"
               />
-              <span className="text-xl font-bold">Growthlio Branding</span>
+              <span className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">Growthlio Digital Service</span>
             </div>
-            <p className="text-white/80 text-sm">
-              Accelerating Brand Growth Through Creativity.
+            <p className="text-white/80 text-sm leading-relaxed pr-4">
+              Helping Businesses Grow Through Strategy, Content & Digital Marketing.
             </p>
           </div>
 
@@ -60,6 +60,22 @@ const Footer = () => {
               </li>
               <li>
                 <button
+                  onClick={() => scrollToSection("#projects")}
+                  className="text-white/80 hover:text-white transition-colors text-sm"
+                >
+                  Projects
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection("#team")}
+                  className="text-white/80 hover:text-white transition-colors text-sm"
+                >
+                  Team
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => scrollToSection("#contact")}
                   className="text-white/80 hover:text-white transition-colors text-sm"
                 >
@@ -72,36 +88,65 @@ const Footer = () => {
           {/* Social Column */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
-            <div className="flex gap-4 mb-4">
+            <div className="flex gap-4 mb-6">
               <a
                 href="https://www.instagram.com/growth_lio/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://wa.me/918883111773?text=Hi!%20I%20want%20to%20know%20more%20about%20Growthlio%20Branding"
+                href="https://wa.me/919363744719"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
               </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
             </div>
 
-            {/* Email Contact */}
-            <div className="flex items-center gap-2 text-white/80 hover:text-white transition-all duration-300 group">
-              <Mail className="h-5 w-5 text-white/70 group-hover:text-white transition-all duration-300" />
-              <a
-                href="mailto:contact@growthlio.in"
-                className="text-sm underline-offset-4 group-hover:underline transition-all duration-300"
-              >
-                contact@growthlio.in
-              </a>
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-white/80 hover:text-white transition-all duration-300 group">
+                <Mail className="h-5 w-5 text-white/70 group-hover:text-white transition-all duration-300" />
+                <a
+                  href="mailto:contact@growthlio.in"
+                  className="text-sm underline-offset-4 group-hover:underline transition-all duration-300"
+                >
+                  contact@growthlio.in
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-white/80 hover:text-white transition-all duration-300 group">
+                <Phone className="h-5 w-5 text-white/70 group-hover:text-white transition-all duration-300" />
+                <a
+                  href="tel:+919363744719"
+                  className="text-sm underline-offset-4 group-hover:underline transition-all duration-300"
+                >
+                  +91 9363744719
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -109,7 +154,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-white/70 text-sm">
-            © {currentYear} Growthlio Branding – All Rights Reserved.
+            © {currentYear} Growthlio Digital Service – All Rights Reserved.
           </p>
         </div>
       </div>

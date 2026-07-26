@@ -1,116 +1,135 @@
-import { useEffect, useRef, useState } from "react";
-import { Card } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
-
-const projects = [
-  {
-    title: "Campus Connect Campaign",
-    category: "NGP Explorer",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-    description: "Social media strategy for student engagement",
-  },
-  {
-    title: "Brand Identity",
-    category: "Aloft Events",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop",
-    description: "Complete visual identity and brand guidelines",
-  },
-  {
-    title: "Digital Reach Booster",
-    category: "Vision Studio",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    description: "Performance marketing campaign with 300% ROI",
-  },
-  {
-    title: "E-commerce Growth",
-    category: "TrendyCart",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-    description: "SEO and content strategy for online retail",
-  },
-  {
-    title: "Brand Revamp",
-    category: "FitLife Wellness",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
-    description: "Complete rebranding and digital presence",
-  },
-  {
-    title: "Launch Campaign",
-    category: "TechStart Solutions",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
-    description: "Go-to-market strategy and brand launch",
-  },
-];
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CaseStudyModal } from "./CaseStudyModal";
+import { CATEGORIES, projects, Project } from "../data/projectsData";
 
 const Projects = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const filteredProjects = projects.filter(
+    (p) => activeCategory === "All" || p.category === activeCategory
+  );
 
   return (
-    <section
-      id="projects"
-      ref={sectionRef}
-      className="py-20 md:py-32 bg-background"
-    >
+    <section id="projects" className="py-24 md:py-32 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary mb-6">
-            Growth Stories
-          </h2>
-          <div className="h-1 w-24 bg-gradient-primary mx-auto mb-6 rounded-full" />
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover how we've helped brands achieve remarkable growth
-          </p>
+        
+        {/* Header */}
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-secondary mb-6"
+          >
+            Growthlio Works
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-muted-foreground leading-relaxed"
+          >
+            A showcase of our creative work across industries.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card
-              key={project.title}
-              className={`group overflow-hidden border-none cursor-pointer transition-all duration-500 hover-lift ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="relative overflow-hidden aspect-[4/3]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center text-white p-6">
-                    <ExternalLink className="h-8 w-8 mx-auto mb-3" />
-                    <p className="text-sm">{project.description}</p>
+        {/* Category Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16 relative z-10 sticky top-20 bg-background/80 backdrop-blur-md py-4">
+          {CATEGORIES.map((category) => {
+            const isActive = activeCategory === category;
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`relative px-5 py-2 text-sm md:text-base font-medium transition-colors duration-300 ${
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-secondary"
+                }`}
+              >
+                {category}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeTabIndicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-purple-500 rounded-full"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Projects Grid */}
+        <motion.div 
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+                className="group cursor-pointer rounded-[20px] bg-card border border-border/50 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col"
+                onClick={() => setSelectedProject(project)}
+              >
+                {/* Auto-playing preview video */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  <motion.div layoutId={`project-hero-${project.id}`} className="w-full h-full">
+                    <video
+                      src={project.heroVideoUrl}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  </motion.div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="px-3 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-full text-xs text-white font-medium">
+                      {project.category}
+                    </span>
                   </div>
                 </div>
-              </div>
-              <div className="p-6 bg-card">
-                <h3 className="text-xl font-semibold text-secondary mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-primary font-medium">{project.category}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
+
+                {/* Minimal Label */}
+                <div className="p-5 bg-white/5 backdrop-blur-xl">
+                  <h3 className="text-xl font-semibold text-secondary">
+                    {project.label}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {filteredProjects.length === 0 && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            className="text-center py-32 text-muted-foreground"
+          >
+            {/* Empty state as requested */}
+          </motion.div>
+        )}
       </div>
+
+      {/* Full Screen Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <CaseStudyModal 
+            project={selectedProject} 
+            onClose={() => setSelectedProject(null)} 
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };
