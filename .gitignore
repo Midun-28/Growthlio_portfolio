@@ -26,6 +26,6 @@ dist-ssr
 .env*
 
 # Large files (> 100MB — use Vercel Blob for these)
+public/portfolio-assets/broadcast-vid-1.mp4
 public/portfolio-assets/inf-marketing-vid-9.mov
 public/portfolio-assets/poppys-vista-24-7-26.mp4
-# broadcast-vid-1.mp4 is < 100MB, so it's tracked by git and deployed directly
