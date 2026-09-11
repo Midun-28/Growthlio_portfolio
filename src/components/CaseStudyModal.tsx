@@ -79,7 +79,7 @@ export const CaseStudyModal = ({ project, onClose }: Props) => {
                     src={vid} 
                     className="w-full h-full object-cover" 
                     controls
-                    preload="metadata"
+                    preload="none"
                   />
                 </div>
               ))}
