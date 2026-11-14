@@ -45,7 +45,7 @@ const Team = () => {
     <section
       id="team"
       ref={sectionRef}
-      className="py-20 md:py-32 bg-background"
+      className="scroll-mt-16 md:scroll-mt-20 py-20 md:py-32 bg-background"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

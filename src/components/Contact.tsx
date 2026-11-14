@@ -41,7 +41,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-20 md:py-32 bg-gradient-hero relative overflow-hidden"
+      className="scroll-mt-16 md:scroll-mt-20 py-20 md:py-32 bg-gradient-hero relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">

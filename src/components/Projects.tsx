@@ -12,7 +12,7 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section id="projects" className="scroll-mt-16 md:scroll-mt-20 py-24 md:py-32 bg-background relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -37,7 +37,7 @@ const Projects = () => {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16 relative z-10 sticky top-20 bg-background/80 backdrop-blur-md py-4">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16 relative z-30 sticky top-16 md:top-20 bg-background/95 backdrop-blur-md py-4 shadow-sm rounded-2xl">
           {CATEGORIES.map((category) => {
             const isActive = activeCategory === category;
             return (
@@ -88,6 +88,7 @@ const Projects = () => {
                       loop
                       muted
                       playsInline
+                      preload="auto"
                     />
                   </motion.div>
                   
